@@ -93,7 +93,7 @@ module.exports = async (client, interaction, args) => {
             
             async function bet(outcome) {
                 if (outcome === "win") {
-                    data.Money += money * 2;
+                    data.Money += money;
                     data.save();
                 }
                 if (outcome === "lose") {
@@ -105,7 +105,7 @@ module.exports = async (client, interaction, args) => {
                     data.save();
                 }
                 if (outcome === "blackjack") {
-                    data.Money += money * 2.5;
+                    data.Money += money * 1.5;
                     data.save();
                 }
             }
@@ -240,7 +240,7 @@ module.exports = async (client, interaction, args) => {
                     bet("blackjack");
                     gameOver = true;
                     endMsg(
-                        `Results : Blackjack! You win ${client.emotes.economy.coins}${money * 2.5}!`,
+                        `Results : Blackjack! You win ${client.emotes.economy.coins}${money * 1.5}!`,
                         ``
                     );
                 }
